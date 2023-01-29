@@ -39,7 +39,7 @@ Then
         //    User goes to "https://allovercommerce.com
         Driver.getDriver().get(ConfigReader.getProperty("ecommerce_url"));
 
-        //    User clicks on the Register link
+        //    User clicks on the Register link.
         homePage.registerOption.click();
 
         // User enters Username
