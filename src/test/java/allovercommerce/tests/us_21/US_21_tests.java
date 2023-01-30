@@ -27,8 +27,8 @@ public class US_21_tests {
 
 //        user should be log in.
         homePage.useIcon.click();
-        homePage.userName.sendKeys(ConfigReader.getProperty("username"));
-        homePage.password.sendKeys(ConfigReader.getProperty("password"));
+        homePage.userName.sendKeys(ConfigReader.getProperty("yasin_username"));
+        homePage.password.sendKeys(ConfigReader.getProperty("yasin_password"));
         homePage.signInButton.click();
 
 //        click the search box
