@@ -4,11 +4,15 @@
 <<<<<<< HEAD
     <mapping directory="" vcs="Git" />
 =======
+<<<<<<< HEAD
+    <mapping directory="" vcs="Git" />
+=======
 
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
 
     <mapping directory="" vcs="Git" />
 
 >>>>>>> main
+>>>>>>> 68b27d19b65890170f9e0c96af71542b4f3979e4
   </component>
 </project>
