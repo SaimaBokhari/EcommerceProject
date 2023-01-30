@@ -71,7 +71,6 @@ public class HomePage {
     public WebElement accountAlreadyExistMessage;
 
 
-
     // Locate elements for "BECOME A VENDOR"
 
     @FindBy(linkText = "Become a Vendor")
