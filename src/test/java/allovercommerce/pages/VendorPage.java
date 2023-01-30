@@ -10,16 +10,15 @@ public class VendorPage {
     public VendorPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
-
     @FindBy(xpath = "//a[@class='register_as_vendor']")
     public WebElement vendorSignupOption;
-
     @FindBy(id = "user_email")
     public WebElement emailInput;
+    @FindBy(xpath = "(//input[@type='text'])[2]")
+    public WebElement codeInput;
 
     @FindBy(id = "passoword")
     public WebElement passwordInput;
-
     @FindBy(id = "confirm_pwd")
     public WebElement confirmPasswordInput;
 
@@ -74,7 +73,14 @@ public class VendorPage {
     @FindBy(xpath = "//h2")
     public WebElement myAccountHeader;
 
+    @FindBy(xpath = "//span[@class='wcicon-status-completed']")
+    public WebElement verificationCodeMessage;
 
+    @FindBy(xpath = "//span[@class='wcicon-status-cancelled']")
+    public WebElement passwordTooShortFailureMessage;
+
+    @FindBy(linkText = "Wishlist")
+    public WebElement wishlistLink;
 
 
 }
