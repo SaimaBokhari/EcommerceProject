@@ -29,17 +29,25 @@ public class MyAccountPage {
     @FindBy(id = "billing_last_name")
     public WebElement billingLastName;
 
+
+
+
+
     @FindBy(xpath = "(//span[@class='select2-selection__placeholder'])[1]")
     public WebElement billingCountryDropdown;
 
     @FindBy(xpath = "//input[@class='select2-search__field']")
     public WebElement countryInputSection;
 
+
     @FindBy(id = "billing_address_1")
     public WebElement billingStreetAddress;
 
     @FindBy(id = "billing_city")
     public WebElement billingCity;
+
+
+
 
     @FindBy(xpath = "(//span[@class='select2-selection__placeholder'])[2]")
     public WebElement billingState;
@@ -53,8 +61,10 @@ public class MyAccountPage {
     @FindBy(name = "save_address")
     public WebElement saveBillingAddress;
 
+
     @FindBy(xpath = "//div[@class='woocommerce-notices-wrapper']")
     public WebElement successMessage;
+
 
 
 

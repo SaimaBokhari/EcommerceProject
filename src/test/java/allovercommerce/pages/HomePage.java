@@ -11,7 +11,34 @@ public class HomePage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
+
+    // Locate elements by using any locator
+    @FindBy(xpath = "//button[@name='login']")
+    public WebElement signInButton;
+
+    @FindBy(id = "username")
+    public WebElement userName;
+
+    @FindBy(id = "password")
+    public WebElement password;
+
+    @FindBy(id = "rememberme")
+    public WebElement rememberMe;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement signInSubmitButton;
+
+    @FindBy(xpath = "//i[@class='w-icon-account']")
+    public WebElement useIcon    ;
+
+    @FindBy(xpath = "//input[@type='search'][1]")
+    public WebElement searchBox;
+
+    @FindBy(xpath = "//div[@class='search-name']")
+    public WebElement productSearch;
+
     // Locate elements for signing up/registration
+
 
     @FindBy(xpath = "//a[.='Register']")
     public WebElement registerOption;
@@ -53,23 +80,18 @@ public class HomePage {
 
     // Locate elements for SIGN IN
 
-    @FindBy(partialLinkText = "Sign In")
-    public WebElement signInButton;
 
-    @FindBy(id = "username")
-    public WebElement userName;
 
-    @FindBy(id = "password")
-    public WebElement password;
+
+
+
 
     @FindBy(id = "rememberme")
     public WebElement rememberMeCheckbox;
 
-    @FindBy(xpath = "(//button[@type='submit'])[2]")
-    public WebElement signInSubmitButton;
+
 
     @FindBy(xpath = "(//i[@class='w-icon-account'])[1]")
     public WebElement userIcon;
-
 
 }
