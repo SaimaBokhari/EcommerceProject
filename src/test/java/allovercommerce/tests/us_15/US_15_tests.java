@@ -38,8 +38,8 @@ public class US_15_tests {
         Driver.getDriver().get(ConfigReader.getProperty("my_account_url"));
 
 //    enter username and password
-        homePage.userName.sendKeys(ConfigReader.getProperty("username"));
-        homePage.password.sendKeys(ConfigReader.getProperty("password"));
+        homePage.userName.sendKeys(ConfigReader.getProperty("yasin_username"));
+        homePage.password.sendKeys(ConfigReader.getProperty("yasin_password"));
 
 //    click sign in button
         JSUtils.clickElementByJS(accountPage.signInButton);
