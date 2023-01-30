@@ -11,6 +11,7 @@ public class HomePage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
+
     // Locate elements by using any locator
     @FindBy(xpath = "//button[@name='login']")
     public WebElement signInButton;
@@ -36,5 +37,61 @@ public class HomePage {
     @FindBy(xpath = "//div[@class='search-name']")
     public WebElement productSearch;
 
+    // Locate elements for signing up/registration
+
+
+    @FindBy(xpath = "//a[.='Register']")
+    public WebElement registerOption;
+
+    @FindBy(id = "reg_username")
+    public WebElement reg_username;
+
+    @FindBy(id = "reg_email")
+    public WebElement reg_email;
+
+    @FindBy(id = "reg_password")
+    public WebElement reg_password;
+
+    @FindBy(xpath = "//a[@class='register_as_vendor']")
+    public WebElement vendorSignupOption;
+
+    @FindBy(id = "register-policy")
+    public WebElement registerPolicy;
+
+    @FindBy(name = "register")
+    public WebElement signupButton;
+
+    @FindBy(xpath = "//a[.='Sign Out']")
+    public WebElement signOutButton;
+
+    @FindBy(xpath = "//a[.='Log out']")
+    public WebElement confirmLogOutButton;
+
+    @FindBy(xpath = "(//p[@class='submit-status'])[2]")
+    public WebElement accountAlreadyExistMessage;
+
+
+
+    // Locate elements for "BECOME A VENDOR"
+
+    @FindBy(linkText = "Become a Vendor")
+    public WebElement becomeAVendorOption;
+
+
+    // Locate elements for SIGN IN
+
+
+
+
+
+
+
+    @FindBy(id = "rememberme")
+    public WebElement rememberMeCheckbox;
+
+
+
+    @FindBy(xpath = "(//i[@class='w-icon-account'])[1]")
+    public WebElement userIcon;
 
 }

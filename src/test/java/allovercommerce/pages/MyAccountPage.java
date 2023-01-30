@@ -11,6 +11,10 @@ public class MyAccountPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
+    // Sign up link
+    @FindBy(partialLinkText = "Sign Up")
+    public WebElement signupOption;
+
     // Locate elements by using any locator
 
     @FindBy(partialLinkText = "Addresses")
@@ -25,8 +29,16 @@ public class MyAccountPage {
     @FindBy(id = "billing_last_name")
     public WebElement billingLastName;
 
-    @FindBy(id = "select2-billing_country-container")
+
+
+
+
+    @FindBy(xpath = "(//span[@class='select2-selection__placeholder'])[1]")
     public WebElement billingCountryDropdown;
+
+    @FindBy(xpath = "//input[@class='select2-search__field']")
+    public WebElement countryInputSection;
+
 
     @FindBy(id = "billing_address_1")
     public WebElement billingStreetAddress;
@@ -34,7 +46,10 @@ public class MyAccountPage {
     @FindBy(id = "billing_city")
     public WebElement billingCity;
 
-    @FindBy(id = "select2-billing_state-container")
+
+
+
+    @FindBy(xpath = "(//span[@class='select2-selection__placeholder'])[2]")
     public WebElement billingState;
 
     @FindBy(id = "billing_postcode")
@@ -45,6 +60,13 @@ public class MyAccountPage {
 
     @FindBy(name = "save_address")
     public WebElement saveBillingAddress;
+
+
+    @FindBy(xpath = "//div[@class='woocommerce-notices-wrapper']")
+    public WebElement successMessage;
+
+
+
 
 
 }
