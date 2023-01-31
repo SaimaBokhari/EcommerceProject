@@ -1,5 +1,6 @@
 package allovercommerce.tests.us_09;
 
+import allovercommerce.pages.HomePage;
 import allovercommerce.pages.MyAccountPage;
 import allovercommerce.pages.VendorPage;
 import allovercommerce.utilities.ConfigReader;
