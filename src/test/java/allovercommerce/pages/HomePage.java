@@ -13,6 +13,7 @@ public class HomePage {
 
 
     // Locate elements by using any locator
+
     @FindBy(xpath = "//span[.='Sign In']")
     public WebElement signInSection;
 
@@ -22,11 +23,18 @@ public class HomePage {
     @FindBy(xpath = "//button[@name='login']")
     public WebElement signInButton;
 
+
+    @FindBy(id = "username")
+    public WebElement userName;
+
+
+
     @FindBy(id = "password")
     public WebElement password;
 
     @FindBy(id = "rememberme")
     public WebElement rememberMe;
+
 
     @FindBy(xpath = "(//i[@class='w-icon-account'])[1]")
     public WebElement manIcon;
@@ -54,6 +62,11 @@ public class HomePage {
 
     @FindBy(partialLinkText ="Sign Out")
     public WebElement signOut;
+
+
+
+
+
 
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement signInSubmitButton;
@@ -107,6 +120,9 @@ public class HomePage {
 
 
     // Locate elements for SIGN IN
+    @FindBy(id = "rememberme")
+    public WebElement rememberMeCheckbox;
+
     @FindBy(xpath = "(//i[@class='w-icon-account'])[1]")
     public WebElement userIcon;
 
