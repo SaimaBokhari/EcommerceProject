@@ -8,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 public class HomePage {
 
     public HomePage(){  // Constructor
+
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
@@ -70,6 +71,21 @@ public class HomePage {
 
     @FindBy(xpath = "(//i[@class='w-icon-account'])[1]")
     public WebElement userIcon;
+
+    @FindBy(xpath = "//input[@type='search'][1]")
+    public WebElement searchBox;
+
+    @FindBy(xpath = "//div[@class='search-name']")
+    public WebElement productSearch;
+
+    @FindBy(linkText = "Sign In")
+    public WebElement signIn;
+
+    @FindBy(name = "login")
+    public WebElement logIn;
+
+
+
 
 
 }
