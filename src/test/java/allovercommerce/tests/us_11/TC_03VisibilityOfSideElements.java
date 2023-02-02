@@ -1,4 +1,4 @@
-package allovercommerce.tests.US_11VendorSignUp;
+package allovercommerce.tests.us_11;
 
 import allovercommerce.pages.HomePage;
 import allovercommerce.pages.VendorPage;
@@ -8,9 +8,10 @@ import allovercommerce.utilities.ReusableMethods;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
-public class TC_02VisibilityOfElements {
+public class TC_03VisibilityOfSideElements {
 
- /*
+
+        /*
     Given
          User goes to "https://allovercommerce.com
      When
@@ -24,11 +25,14 @@ public class TC_02VisibilityOfElements {
       And
          User click on "Sing Out" link
       Then
-          Verify that Orders, Downloads, Addresses, Account Details, Whishlist and Logout are visible
+          Verify that Store Manager, Orders, Downloads,Addresses, Account Details, Whishlist,
+          Support Tickets,Followings and Logout should be visible on Dashboard
+
      */
 
+
     @Test
-    public void visibilityOfWebElements() {
+    public void visibilityOfSideElements() {
 
         //    User goes to "https://allovercommerce.com
         ReusableMethods.waitFor(3);
@@ -56,10 +60,15 @@ public class TC_02VisibilityOfElements {
         homePage.signOut.click();
         ReusableMethods.waitFor(5);
 
-        //   Verify that Orders, Downloads, Addresses, Account Details, Whishlist and Logout are visible
+        //   Verify that Store Manager, Orders, Downloads,Addresses, Account Details, Whishlist,
+        //   Support Tickets,Followings and Logout should be visible on Dashboard
+
+
         VendorPage vendorPage = new VendorPage();
         ReusableMethods.waitFor(10);
 
+        ReusableMethods.verifyElementDisplayed(vendorPage.storeManagerLink);
+        ReusableMethods.waitFor(2);
         ReusableMethods.verifyElementDisplayed(vendorPage.ordersLink);
         ReusableMethods.waitFor(2);
         ReusableMethods.verifyElementDisplayed(vendorPage.downloadsLink);
@@ -68,22 +77,23 @@ public class TC_02VisibilityOfElements {
         ReusableMethods.waitFor(2);
         ReusableMethods.verifyElementDisplayed(vendorPage.accountDetailsLink);
         ReusableMethods.waitFor(2);
-        ReusableMethods.verifyElementDisplayed(vendorPage.whishlistLink);
+        ReusableMethods.verifyElementDisplayed(vendorPage.whishlistDashboardLink);
+        ReusableMethods.waitFor(2);
+        ReusableMethods.verifyElementDisplayed(vendorPage.supportTicketsLink);
+        ReusableMethods.waitFor(2);
+        ReusableMethods.verifyElementDisplayed(vendorPage.followingsLink);
         ReusableMethods.waitFor(2);
         ReusableMethods.verifyElementDisplayed(vendorPage.logoutLink);
         ReusableMethods.waitFor(2);
 
     }
     @AfterMethod
-    public void closeDriver(){
+    public void closeDriver2(){
         ReusableMethods.waitFor(2);
         Driver.closeDriver();
     }
 
+}
 
 
-
-
-
-    }
 
