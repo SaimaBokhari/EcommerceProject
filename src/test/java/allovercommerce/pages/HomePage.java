@@ -13,11 +13,19 @@ public class HomePage {
 
 
     // Locate elements by using any locator
+<<<<<<< HEAD
+    @FindBy(xpath = "//span[.='Sign In']")
+    public WebElement signInSection;
+
+    @FindBy(id = "username")
+    public WebElement username;
+=======
     @FindBy(xpath = "//button[@name='login']")
     public WebElement signInButton;
 
     @FindBy(id = "username")
     public WebElement userName;
+>>>>>>> 68b27d19b65890170f9e0c96af71542b4f3979e4
 
     @FindBy(id = "password")
     public WebElement password;
@@ -25,6 +33,40 @@ public class HomePage {
     @FindBy(id = "rememberme")
     public WebElement rememberMe;
 
+<<<<<<< HEAD
+    @FindBy(name = "login")
+    public WebElement signInButton;
+
+    @FindBy(xpath = "(//i[@class='w-icon-account'])[1]")
+    public WebElement manIcon;
+
+    @FindBy(id = "yith-wcwl-popup-message")
+    public WebElement popUp;
+
+    @FindBy(linkText = "Register")
+    public WebElement register;
+
+    @FindBy(id = "reg_username")
+    public WebElement usernameReg;
+
+    @FindBy(id = "reg_email")
+    public WebElement emailReg;
+
+    @FindBy(id = "reg_password")
+    public WebElement passwordReg;
+
+    @FindBy(xpath = "//button[@name='register']")
+    public WebElement signUp;
+
+    @FindBy(id = "register-policy")
+    public WebElement checkBox;
+
+    @FindBy(partialLinkText ="Sign Out")
+    public WebElement signOut;
+
+
+
+=======
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement signInSubmitButton;
 
@@ -78,6 +120,7 @@ public class HomePage {
 
 
     // Locate elements for SIGN IN
+>>>>>>> 68b27d19b65890170f9e0c96af71542b4f3979e4
 
 
 
