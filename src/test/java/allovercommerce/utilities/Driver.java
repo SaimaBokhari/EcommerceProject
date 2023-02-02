@@ -10,6 +10,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.time.Duration;
 
+import static allovercommerce.utilities.ReusableMethods.waitFor;
+
 public class Driver {
 
     // Driver.getDriver() returns driver object
@@ -22,6 +24,7 @@ public class Driver {
                 case "chrome":
                     WebDriverManager.chromedriver().setup();   // This is older version of creating driver object
                     driver = new ChromeDriver();
+
                     break;
                 case "chrome-headless":
                     WebDriverManager.chromedriver().setup();
@@ -40,8 +43,8 @@ public class Driver {
             // Following is the latest version (Selenium 4.5)
             //  driver = WebDriverManager.chromedriver().create();  It also closes the driver automatically.
         }
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); // implicit wait will wait for this long only if needed
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20)); // implicit wait will wait for this long only if needed
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
         driver.manage().window().maximize();
         return driver;
     }
