@@ -23,8 +23,10 @@ public class HomePage {
     @FindBy(xpath = "//button[@name='login']")
     public WebElement signInButton;
 
+
     @FindBy(id = "username")
     public WebElement userName;
+
 
 
     @FindBy(id = "password")
@@ -64,8 +66,13 @@ public class HomePage {
 
 
 
+
+
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement signInSubmitButton;
+
+    @FindBy(linkText = "My Account")
+    public WebElement myAccountSection;
 
     @FindBy(xpath = "//i[@class='w-icon-account']")
     public WebElement useIcon    ;
@@ -77,8 +84,6 @@ public class HomePage {
     public WebElement productSearch;
 
     // Locate elements for signing up/registration
-
-
     @FindBy(xpath = "//a[.='Register']")
     public WebElement registerOption;
 
@@ -109,26 +114,14 @@ public class HomePage {
     @FindBy(xpath = "(//p[@class='submit-status'])[2]")
     public WebElement accountAlreadyExistMessage;
 
-
     // Locate elements for "BECOME A VENDOR"
-
     @FindBy(linkText = "Become a Vendor")
     public WebElement becomeAVendorOption;
 
 
     // Locate elements for SIGN IN
-
-
-
-
-
-
-
-
     @FindBy(id = "rememberme")
     public WebElement rememberMeCheckbox;
-
-
 
     @FindBy(xpath = "(//i[@class='w-icon-account'])[1]")
     public WebElement userIcon;
