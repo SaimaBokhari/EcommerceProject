@@ -71,7 +71,7 @@ public class TC_20_VendorShouldAddCoupon {
         ReusableMethods.waitFor(2);
 
         // Vendor types his/her username or email
-        homePage.userName.sendKeys("mtkama2010@gmail.com");
+        homePage.username.sendKeys("mtkama2010@gmail.com");
         ReusableMethods.waitFor(1);
 
         // Vendor types his/her password

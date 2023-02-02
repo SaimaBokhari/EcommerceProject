@@ -107,4 +107,12 @@ public class StoreManagerPage {
 
     @FindBy(xpath = "//span[@class='product-status product-status-publish']")
     public WebElement publishedSection;
+
+    @FindBy(xpath = "//div[@class='wcfm_menu_items wcfm_menu_wcfm-products']/a")
+    public WebElement products;
+
+    @FindBy(xpath = "//div[@class='wcfm_menu_items wcfm_menu_wcfm-products']/span")
+    public WebElement productsAddNew;
+
+
 }

@@ -5,7 +5,6 @@ import allovercommerce.pages.MyAccountPage;
 import allovercommerce.utilities.*;
 import com.github.javafaker.Faker;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
@@ -69,7 +68,7 @@ public class TC_04_UserShouldAddShippingAddress {
         ReusableMethods.waitFor(1);
 
         // Registered User types username or email address
-        homePage.userName.sendKeys("vitoandolini");
+        homePage.username.sendKeys("vitoandolini");
         ReusableMethods.waitFor(1);
 
         // Registered User types password
