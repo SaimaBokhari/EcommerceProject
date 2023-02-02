@@ -19,6 +19,9 @@ public class VendorPage {
 
     @FindBy(id = "passoword")
     public WebElement passwordInput;
+
+
+
     @FindBy(id = "confirm_pwd")
     public WebElement confirmPasswordInput;
 
