@@ -1,4 +1,4 @@
-package allovercommerce.tests.us_09;
+package allovercommerce.tests.us_08;
 
 import allovercommerce.pages.HomePage;
 import allovercommerce.pages.PurchasePage;
@@ -16,7 +16,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TC_08_AddItemsWishlist {
+public class TC_01_AddItemsWishlist {
    HomePage homePage = new HomePage();
    VendorPage vendorPage = new VendorPage();
    WishPage wishPage = new WishPage();

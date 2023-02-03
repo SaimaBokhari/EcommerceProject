@@ -87,6 +87,11 @@ public class VendorPage {
     @FindBy(linkText = "Followings")
     public WebElement followingsLink;
 
+    @FindBy(xpath = "//*[.='Store Manager']")
+    public WebElement storeManager;
+
+
+
 
 
 
