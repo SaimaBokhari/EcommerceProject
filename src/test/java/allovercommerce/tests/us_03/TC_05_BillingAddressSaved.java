@@ -1,0 +1,150 @@
+package allovercommerce.tests.us_03;
+
+import allovercommerce.pages.HomePage;
+import allovercommerce.pages.MyAccountPage;
+import allovercommerce.utilities.ConfigReader;
+import allovercommerce.utilities.Driver;
+import allovercommerce.utilities.JSUtils;
+import allovercommerce.utilities.ReusableMethods;
+import com.github.javafaker.Faker;
+import org.openqa.selenium.Keys;
+import org.testng.annotations.Test;
+
+import java.security.Key;
+
+import static org.testng.AssertJUnit.assertTrue;
+
+public class TC_05_BillingAddressSaved {
+    /*
+Given
+    User goes to "https://allovercommerce.com/”
+And
+  User is signed in
+When
+  Clicks on "Addresses" section
+And
+  Clicks on "ADD" under "Billing Address"
+And
+  User types first name
+And
+  User enters last name
+And
+  User enters country/region
+And
+  User enters street address
+And
+  User enters town/city
+And
+  User enters state
+And
+  User enters ZIP Code
+And
+  User enters Phone
+And
+   Confirms registered email address is filled in automatically.
+And
+   User clicks on "Save Address" option
+Then
+  Verify that Billing Address is successfully saved
+
+    */
+    HomePage homePage = new HomePage();
+    MyAccountPage myAccountPage = new MyAccountPage();
+    Faker faker = new Faker();
+    String reg_username = faker.name().username();
+    String reg_email = faker.internet().emailAddress();
+    String reg_password = faker.internet().password(6,9);
+
+    @Test
+    public void test01(){
+        // Sign Up
+        //     User goes to "https://allovercommerce.com/”
+        Driver.getDriver().get(ConfigReader.getProperty("ecommerce_url"));
+        ReusableMethods.waitFor(1);  // Hard wait
+        homePage.registerOption.click();
+        ReusableMethods.waitFor(1);
+        homePage.reg_username.sendKeys(reg_username);
+        ReusableMethods.waitFor(1);
+        homePage.reg_email.sendKeys(reg_email);
+        ReusableMethods.waitFor(1);
+        homePage.reg_password.sendKeys(reg_password);
+        ReusableMethods.waitFor(1);
+        homePage.registerPolicy.click();
+        homePage.signupButton.click();
+
+//        =========================================================
+
+        // sign in
+        homePage.signOutButton.click();  // to see the account details on the left
+
+        //   Clicks on "Addresses" section
+        ReusableMethods.waitFor(3);
+        myAccountPage.addressesButton.click();
+
+        //   Clicks on "ADD" under "Billing Address"
+        ReusableMethods.waitFor(3);
+        myAccountPage.addButtonForBillingAddress.click();
+
+        //   User types first name
+        ReusableMethods.waitFor(3);
+        myAccountPage.billingFirstName.sendKeys(faker.name().firstName());
+        assertTrue(myAccountPage.billingFirstName.isDisplayed());
+        //   User enters last name
+        ReusableMethods.waitFor(3);
+        myAccountPage.billingLastName.sendKeys(faker.name().lastName());
+        assertTrue(myAccountPage.billingLastName.isDisplayed());
+        ReusableMethods.waitFor(5);
+
+        //   User enters country/region
+        JSUtils.scrollIntoViewJS(myAccountPage.billingCountryDropdown);
+        ReusableMethods.waitFor(5);
+        myAccountPage.billingCountryDropdown.click();
+
+        ReusableMethods.waitFor(5);
+        JSUtils.scrollIntoViewJS(myAccountPage.countryInputSection);
+        myAccountPage.countryInputSection.sendKeys("United States"+ Keys.ENTER);
+
+
+       //   User enters street address
+        ReusableMethods.waitFor(5);
+        myAccountPage.billingStreetAddress.sendKeys(faker.address().streetAddress());
+
+        //   User enters town/city
+        ReusableMethods.waitFor(5);
+        myAccountPage.billingCity.sendKeys(faker.address().cityName());
+
+       //   User enters state
+        ReusableMethods.waitFor(5);
+        myAccountPage.billingState.click();
+        myAccountPage.billingState.sendKeys(faker.address().state());
+        ReusableMethods.waitFor(5);
+        assertTrue(myAccountPage.billingState.isDisplayed());
+
+        //   User enters ZIP Code
+        JSUtils.scrollIntoViewJS(myAccountPage.billingZipcode);
+        myAccountPage.billingZipcode.sendKeys(faker.address().zipCode());
+        ReusableMethods.waitFor(5);
+        assertTrue(myAccountPage.billingZipcode.isDisplayed());
+
+        // User enters Phone
+        ReusableMethods.waitFor(5);
+        myAccountPage.billingPhone.sendKeys(faker.phoneNumber().cellPhone());
+        ReusableMethods.waitFor(5);
+        assertTrue(myAccountPage.billingPhone.isDisplayed());
+
+        //  Confirms that registered email address is filled in automatically.
+        ReusableMethods.waitFor(5);
+        assertTrue(myAccountPage.billingEmailConfirmation.getAttribute("value").contains(reg_email));
+
+        // User clicks on "Save Address" option
+        JSUtils.scrollIntoViewJS(myAccountPage.saveBillingAddress);
+        ReusableMethods.waitForClickablility(myAccountPage.saveBillingAddress, 5);
+        ReusableMethods.waitFor(5);
+
+        // Verify that Billing Address is successfully saved
+        assertTrue(myAccountPage.successMessage.isDisplayed());
+
+
+    }
+
+}

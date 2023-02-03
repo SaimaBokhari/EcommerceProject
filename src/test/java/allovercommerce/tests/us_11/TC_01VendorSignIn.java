@@ -1,4 +1,4 @@
-package allovercommerce.tests.US_11VendorSignUp;
+package allovercommerce.tests.us_11;
 
 import allovercommerce.pages.HomePage;
 import allovercommerce.utilities.ConfigReader;
@@ -38,11 +38,14 @@ public class TC_01VendorSignIn {
         homePage.signInSection.click();
 
         //   User enters email address into "email" input
-        homePage.emailReg.sendKeys(ConfigReader.getProperty("vendor_email"));
-        ReusableMethods.waitForVisibility(  homePage.signInSection,20);
+        homePage.username.sendKeys(ConfigReader.getProperty("vendor_email"));
+       // JSUtils.setValueByJS(homePage.username,"automation.projects2023@gmail.com");
+       // ReusableMethods.waitForVisibility(  homePage.signInSection,20);
 
         //   User enters password into "email" input
-        homePage.passwordReg.sendKeys(ConfigReader.getProperty("vendor_password"));
+        homePage.password.sendKeys(ConfigReader.getProperty("vendor_password"));
+
+       // JSUtils.setValueByJS(homePage.password,"Techpro2023!");
         ReusableMethods.waitFor(1);
 
 

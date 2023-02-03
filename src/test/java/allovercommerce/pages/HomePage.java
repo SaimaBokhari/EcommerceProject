@@ -13,19 +13,11 @@ public class HomePage {
 
 
     // Locate elements by using any locator
-<<<<<<< HEAD
-    @FindBy(xpath = "//span[.='Sign In']")
-    public WebElement signInSection;
-
-    @FindBy(id = "username")
-    public WebElement username;
-=======
-    @FindBy(xpath = "//button[@name='login']")
+    @FindBy(partialLinkText = "Sign In")
     public WebElement signInButton;
 
     @FindBy(id = "username")
     public WebElement userName;
->>>>>>> 68b27d19b65890170f9e0c96af71542b4f3979e4
 
     @FindBy(id = "password")
     public WebElement password;
@@ -33,9 +25,26 @@ public class HomePage {
     @FindBy(id = "rememberme")
     public WebElement rememberMe;
 
-<<<<<<< HEAD
-    @FindBy(name = "login")
-    public WebElement signInButton;
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement signInSubmitButton;
+
+    @FindBy(xpath = "(//i[@class='w-icon-account'])[1]")
+    public WebElement useIcon    ;
+
+    @FindBy(xpath = "//span[text()='Sign Out']")
+    public  WebElement userIcon;
+
+    @FindBy(xpath = "//a[@class='register inline-type']")
+    public WebElement registerButton;
+
+    @FindBy(xpath = "//a[@class='register_as_vendor']")
+    public WebElement signUpAsAVendor;
+
+    @FindBy(xpath = "//span[.='Sign In']")
+    public WebElement signInSection;
+
+    @FindBy(id = "username")
+    public WebElement username;
 
     @FindBy(xpath = "(//i[@class='w-icon-account'])[1]")
     public WebElement manIcon;
@@ -64,14 +73,8 @@ public class HomePage {
     @FindBy(partialLinkText ="Sign Out")
     public WebElement signOut;
 
-
-
-=======
-    @FindBy(xpath = "//button[@type='submit']")
-    public WebElement signInSubmitButton;
-
-    @FindBy(xpath = "//i[@class='w-icon-account']")
-    public WebElement useIcon    ;
+    @FindBy(linkText = "My Account")
+    public WebElement myAccountSection;
 
     @FindBy(xpath = "//input[@type='search'][1]")
     public WebElement searchBox;
@@ -80,8 +83,6 @@ public class HomePage {
     public WebElement productSearch;
 
     // Locate elements for signing up/registration
-
-
     @FindBy(xpath = "//a[.='Register']")
     public WebElement registerOption;
 
@@ -112,28 +113,12 @@ public class HomePage {
     @FindBy(xpath = "(//p[@class='submit-status'])[2]")
     public WebElement accountAlreadyExistMessage;
 
-
     // Locate elements for "BECOME A VENDOR"
-
     @FindBy(linkText = "Become a Vendor")
     public WebElement becomeAVendorOption;
 
 
     // Locate elements for SIGN IN
->>>>>>> 68b27d19b65890170f9e0c96af71542b4f3979e4
-
-
-
-
-
-
-
     @FindBy(id = "rememberme")
     public WebElement rememberMeCheckbox;
-
-
-
-    @FindBy(xpath = "(//i[@class='w-icon-account'])[1]")
-    public WebElement userIcon;
-
 }
