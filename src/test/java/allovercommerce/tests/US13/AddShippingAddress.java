@@ -103,7 +103,7 @@ public class AddShippingAddress {
 //   user clicks on SAVE BUTTON
     shippingAddressPage.saveAddressButton.click();
 
-//  user see success message
+
 
 
 
