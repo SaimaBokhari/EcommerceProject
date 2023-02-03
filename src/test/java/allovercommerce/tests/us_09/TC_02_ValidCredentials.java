@@ -34,8 +34,6 @@ Then
    Verify the message "This Email already exists. Please login to the site and apply as vendor.
 
      */
-
-
     HomePage homePage= new HomePage();
     MyAccountPage myAccountPage = new MyAccountPage();
     VendorPage vendorPage = new VendorPage();
