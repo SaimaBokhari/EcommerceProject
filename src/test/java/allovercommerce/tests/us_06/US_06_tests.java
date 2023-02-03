@@ -7,6 +7,7 @@ import allovercommerce.utilities.JSUtils;
 import allovercommerce.utilities.ReusableMethods;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
 public class US_06_tests {
@@ -24,8 +25,8 @@ public class US_06_tests {
 
 //        user should be log in.
         homePage.useIcon.click();
-        homePage.userName.sendKeys(ConfigReader.getProperty("username"));
-        homePage.password.sendKeys(ConfigReader.getProperty("password"));
+        homePage.userName.sendKeys(ConfigReader.getProperty("yasin_username"));
+        homePage.password.sendKeys(ConfigReader.getProperty("yasin_password"));
         homePage.signInButton.click();
 
 //        click the search box
@@ -130,6 +131,11 @@ public class US_06_tests {
         //        Test that "Your order has been received" message is visible
         Assert.assertTrue(orderPage.tick.isDisplayed());
 
+    }
+
+    @AfterClass
+    public void tearDown(){
+        Driver.getDriver().quit();
     }
 
 
