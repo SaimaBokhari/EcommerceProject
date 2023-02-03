@@ -10,6 +10,7 @@ import allovercommerce.utilities.ReusableMethods;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
 public class TC_01_Add_ExternalAffiliate_Product {
@@ -103,15 +104,10 @@ storeManagerPage.buttonTextInput.sendKeys("This is button text");
         ReusableMethods.waitFor(3);
         Assert.assertTrue(storeManagerPage.chessProduct.isDisplayed());
 
-
-
-
-
-
-
-
-
-
+    }
+    @AfterClass
+    public void tearDown() {
+        Driver.getDriver().quit();
     }
 
 

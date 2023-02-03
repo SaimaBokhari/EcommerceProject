@@ -14,6 +14,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
 public class TC_01_AddItemsWishlist {
@@ -80,16 +81,9 @@ public class TC_01_AddItemsWishlist {
             JSUtils.clickElementByJS(purchasePage.placeOrderButton);
 
 
-
-
-
-
-
-
-
-
-
-
-
         }
+    @AfterClass
+    public void tearDown() {
+        Driver.getDriver().quit();
+    }
 }
