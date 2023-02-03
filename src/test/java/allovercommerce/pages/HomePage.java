@@ -8,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 public class HomePage {
 
     public HomePage(){  // Constructor
+
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
@@ -121,4 +122,18 @@ public class HomePage {
     // Locate elements for SIGN IN
     @FindBy(id = "rememberme")
     public WebElement rememberMeCheckbox;
+
+
+
+    @FindBy(linkText = "Sign In")
+    public WebElement signIn;
+
+    @FindBy(name = "login")
+    public WebElement logIn;
+
+
+
+
+
+
 }
