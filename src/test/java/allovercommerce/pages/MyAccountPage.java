@@ -91,6 +91,11 @@ public class MyAccountPage {
     @FindBy(name = "save_address")
     public WebElement saveBillingAddress;
 
+    @FindBy(id = "billing_email")
+    public WebElement billingEmailConfirmation;
+
+
+
     @FindBy(xpath = "//div[@class='woocommerce-notices-wrapper']")
     public WebElement successMessage;
 }
