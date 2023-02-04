@@ -39,8 +39,13 @@ public class Driver {
             //  driver = WebDriverManager.chromedriver().create();  It also closes the driver automatically.
         }
 
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30)); // implicit wait will wait for this long only if needed
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
+
+
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60)); // implicit wait will wait for this long only if needed
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(60));
+
 
         driver.manage().window().maximize();
         return driver;
