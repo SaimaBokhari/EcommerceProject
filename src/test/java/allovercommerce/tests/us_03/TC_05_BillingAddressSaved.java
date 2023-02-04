@@ -116,11 +116,11 @@ Then
         myAccountPage.billingCity.sendKeys(faker.address().cityName());
 
        //   User enters state
-//        ReusableMethods.waitFor(5);
-//        myAccountPage.billingState.click();
-//        myAccountPage.stateInputSectionForBilling.sendKeys(faker.address().state());
-//        ReusableMethods.waitFor(5);
-//        assertTrue(myAccountPage.billingState.isDisplayed());
+        ReusableMethods.waitFor(5);
+        myAccountPage.billingState.click();
+        myAccountPage.stateInputSectionForBilling.sendKeys(faker.address().state() + Keys.ENTER);
+        ReusableMethods.waitFor(5);
+       // assertTrue(myAccountPage.billingState.isDisplayed());
 
         //   User enters ZIP Code
         ReusableMethods.waitFor(5);
@@ -143,14 +143,16 @@ Then
         myAccountPage.saveBillingAddress.click();
 
         // Verify "Address" is saved successfully
+        ReusableMethods.waitFor(5);
         String currentUrl = Driver.getDriver().getCurrentUrl();
-        Assert.assertEquals(currentUrl,"https://allovercommerce.com/my-account-2/edit-address/billing/");
-
+        ReusableMethods.waitFor(3);
+        Assert.assertEquals(currentUrl,"https://allovercommerce.com/my-account-2/edit-address/");
 
     }
     @AfterMethod
     public void tearDown(){
         // Close the application
+        ReusableMethods.waitFor(5);
         Driver.closeDriver();
     }
 
