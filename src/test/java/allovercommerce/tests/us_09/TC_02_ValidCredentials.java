@@ -6,7 +6,6 @@ import allovercommerce.pages.VendorPage;
 import allovercommerce.utilities.ConfigReader;
 import allovercommerce.utilities.Driver;
 import allovercommerce.utilities.ReusableMethods;
-import com.github.javafaker.Faker;
 import org.testng.annotations.Test;
 
 import static org.testng.AssertJUnit.assertTrue;
@@ -35,8 +34,6 @@ Then
    Verify the message "This Email already exists. Please login to the site and apply as vendor.
 
      */
-
-
     HomePage homePage= new HomePage();
     MyAccountPage myAccountPage = new MyAccountPage();
     VendorPage vendorPage = new VendorPage();

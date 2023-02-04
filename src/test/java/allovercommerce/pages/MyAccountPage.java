@@ -8,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 public class MyAccountPage {
 
     public MyAccountPage(){  // Constructor
+
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
@@ -99,9 +100,10 @@ public class MyAccountPage {
     @FindBy(xpath = "//input[@class='select2-search__field']")
     public WebElement stateInputSectionForBilling;
 
-    @FindBy(id = "billing_email")
-    public WebElement billingEmailConfirmation;
+    @FindBy(linkText = "My Account")
+    public WebElement myAccountPageExist;
 
+    // Vender shipping Address locators
 
     @FindBy(xpath = "//div[@class='woocommerce-notices-wrapper']")
     public WebElement successMessage;

@@ -7,6 +7,7 @@ import allovercommerce.utilities.JSUtils;
 import allovercommerce.utilities.ReusableMethods;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertTrue;
@@ -27,8 +28,8 @@ public class US_21_tests {
 
 //        user should be log in.
         homePage.useIcon.click();
-        homePage.userName.sendKeys(ConfigReader.getProperty("username"));
-        homePage.password.sendKeys(ConfigReader.getProperty("password"));
+        homePage.userName.sendKeys(ConfigReader.getProperty("yasin_username"));
+        homePage.password.sendKeys(ConfigReader.getProperty("yasin_password"));
         homePage.signInButton.click();
 
 //        click the search box
@@ -143,7 +144,10 @@ public class US_21_tests {
 
     }
 
-
+    @AfterClass
+    public void tearDown(){
+        Driver.getDriver().quit();
+    }
 
 
 
