@@ -40,9 +40,8 @@ public class MyAccountPage {
     @FindBy(id = "billing_city")
     public WebElement billingCity;
 
-    @FindBy(id = "select2-billing_state-container")
+    @FindBy(xpath = "//span[@class='select2-selection__placeholder']")
     public WebElement billingState;
-
     @FindBy(id = "billing_postcode")
     public WebElement billingZipcode;
 
@@ -94,32 +93,16 @@ public class MyAccountPage {
     @FindBy(xpath = "//input[@class='select2-search__field']")
     public WebElement countryInputSection;
 
-<<<<<<< HEAD
-    @FindBy(id = "billing_address_1")
-    public WebElement billingStreetAddress;
+    @FindBy(xpath = "//input[@class='select2-search__field']")
+    public WebElement countryInputSectionForBilling;
 
-    @FindBy(id = "billing_city")
-    public WebElement billingCity;
-
-    @FindBy(xpath = "(//span[@class='select2-selection__placeholder'])[2]")
-    public WebElement billingState;
-
-    @FindBy(id = "billing_postcode")
-    public WebElement billingZipcode;
-
-    @FindBy(id = "billing_phone")
-    public WebElement billingPhone;
-
-    @FindBy(name = "save_address")
-    public WebElement saveBillingAddress;
+    @FindBy(xpath = "//input[@class='select2-search__field']")
+    public WebElement stateInputSectionForBilling;
 
     @FindBy(id = "billing_email")
     public WebElement billingEmailConfirmation;
 
 
-
-=======
->>>>>>> main
     @FindBy(xpath = "//div[@class='woocommerce-notices-wrapper']")
     public WebElement successMessage;
 }
