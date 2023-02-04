@@ -22,20 +22,32 @@ public class ComparePage {
    //
    //@FindBy(xpath = "(//*[.='Clean All'])[3]")
 
-//   @FindBy(xpath= "//a[@class='compare-clean']")
-//    public WebElement cleanButton;
 
   @FindBy(xpath = "(//a[text()='Clean All'])[2]")
     public WebElement getCleanAllButton;
 
-    @FindBy(xpath = "//*[@class='container slider-relative']")
-    public WebElement containerBox;
+    @FindBy(xpath = "//a[@data-product_id='13229']")
+    public WebElement remove_13229;
 
-    @FindBy(xpath = "//*[@class='container slider-relative']")
-    public WebElement removeProduct1;
 
-    @FindBy(linkText = "Start Compare !")
-    public WebElement startCompareButton;
+    @FindBy(xpath = "//a[@data-product_id='14000']")
+    public WebElement remove_14000;
+
+
+    @FindBy(xpath = "//input[@placeholder='Search']")
+    public WebElement searchBox;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement submitButton;
+
+    @FindBy(xpath ="//*[@id='product-17653']/div[2]/div/h1")
+    public WebElement calculator;
+
+    @FindBy(xpath ="//*[@class='compare btn-product-icon']")
+    public WebElement compareIcon;
+
+    @FindBy(xpath ="//*[@id='product-14216']/div[2]/div/h1")
+    public WebElement ASUS;
 
 
 

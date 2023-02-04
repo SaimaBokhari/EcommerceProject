@@ -95,35 +95,33 @@ public class MyAccountPage {
     @FindBy(xpath = "//input[@class='select2-search__field']")
     public WebElement countryInputSection;
 
-<<<<<<< HEAD
-    @FindBy(id = "billing_address_1")
-    public WebElement billingStreetAddress;
 
-    @FindBy(id = "billing_city")
-    public WebElement billingCity;
+//    @FindBy(id = "billing_address_1")
+//    public WebElement billingStreetAddress;
+//
+//    @FindBy(id = "billing_city")
+//    public WebElement billingCity;
+//
+//    @FindBy(xpath = "(//span[@class='select2-selection__placeholder'])[2]")
+//    public WebElement billingState;
+//
+//    @FindBy(id = "billing_postcode")
+//    public WebElement billingZipcode;
+//
+//    @FindBy(id = "billing_phone")
+//    public WebElement billingPhone;
 
-    @FindBy(xpath = "(//span[@class='select2-selection__placeholder'])[2]")
-    public WebElement billingState;
 
-    @FindBy(id = "billing_postcode")
-    public WebElement billingZipcode;
-
-    @FindBy(id = "billing_phone")
-    public WebElement billingPhone;
-
-    @FindBy(name = "save_address")
-    public WebElement saveBillingAddress;
 
     @FindBy(id = "billing_email")
     public WebElement billingEmailConfirmation;
 
 
 
-=======
->>>>>>> main
+
     @FindBy(xpath = "//div[@class='woocommerce-notices-wrapper']")
     public WebElement successMessage;
-<<<<<<< HEAD
+
 
     @FindBy(linkText = "My Account")
     public WebElement myAccountPageExist;
@@ -132,6 +130,6 @@ public class MyAccountPage {
 
 
 }
-=======
-}
->>>>>>> main
+
+
+

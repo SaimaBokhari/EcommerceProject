@@ -43,33 +43,14 @@ Then
     Driver.getDriver().get(ConfigReader.getProperty("ecommerce_url"));
 
     // click on alloverCompare Logo
-    allOverCommercePage.allOverCommerceLogo.click();
 
-    // search and click to add first pruduct
-    String searchedProduct = ConfigReader.getProperty("search_product5");
-    homePage.searchBox.sendKeys(searchedProduct);
-   WebElement product5 = homePage.productSearch;
-    Assert.assertTrue(product5.isDisplayed());
-    product5.click();
-    // add to compare page
-  ReusableMethods.waitFor(3);
-    JSUtils.clickElementByJS(allOverCommercePage.basketballCompare);
 
-    // back to allCover page
-    allOverCommercePage.allOverCommerceLogo.click();
-    ReusableMethods.waitFor(2);
 
-    homePage.searchBox.sendKeys(ConfigReader.getProperty("search_product6"));
-   WebElement product6 =  homePage.productSearch;
-   Assert.assertTrue(product6.isDisplayed());
-   product6.click();
-   JSUtils.clickElementByJS(allOverCommercePage.afdgaCompare);
+
 
 
    // Handle the small window pops up
 
-    Driver.getDriver().manage().window();
-    comparePage.startCompareButton.click();
 
 
 

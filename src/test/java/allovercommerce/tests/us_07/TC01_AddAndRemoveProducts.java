@@ -7,6 +7,7 @@ import allovercommerce.utilities.ConfigReader;
 import allovercommerce.utilities.Driver;
 import allovercommerce.utilities.JSUtils;
 import allovercommerce.utilities.ReusableMethods;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
@@ -22,7 +23,7 @@ Given
 When
     user click on  “ALLOVER COMMERCE” logo from My Account page
 And
-    click on 1st Product
+    User search for first product
 And
     click on compare icon
 And
@@ -54,69 +55,69 @@ HomePage homePage=new HomePage();
 ComparePage comparePage = new ComparePage();
 @Test
 public void testCase1_Us7(){
-//  https://allovercommerce.com/
+
+
 Driver.getDriver().get(ConfigReader.getProperty("ecommerce_url"));
 
-// user click on  “ALLOVER COMMERCE” icon
-allOverCommercePage.allOverCommerceLogo.click();
+// user adds 4 product to compare
 
-// click on 1st product compare button
-JSUtils.clickElementByJS(allOverCommercePage.producttoCompare);
-ReusableMethods.waitFor(2);
-// click on compare icon
-JSUtils.clickElementByJS(allOverCommercePage.Compareicon);
+    allOverCommercePage.searchBox.click();
+   allOverCommercePage.searchBox.sendKeys("Automatic Crusher", Keys.ENTER);
+   allOverCommercePage.submitButton.click();
+   ReusableMethods.waitFor(2);
+   allOverCommercePage.automaticCrusher.click();
+   allOverCommercePage.compareIcon.click();
+   ReusableMethods.waitFor(2);
+   allOverCommercePage.backToPage.click();
+   ReusableMethods.waitFor(2);
 
-// back to allCover page
-allOverCommercePage.allOverCommerceLogo.click();
-ReusableMethods.waitFor(2);
+   allOverCommercePage.searchBox.sendKeys("Electric Rice-Cooker", Keys.ENTER);
+   allOverCommercePage.submitButton.click();
+   ReusableMethods.waitFor(2);
+   allOverCommercePage.electricRiceCooker.click();
+   allOverCommercePage.compareIcon.click();
+   ReusableMethods.waitFor(2);
+   allOverCommercePage.backToPage.click();
+   ReusableMethods.waitFor(2);
 
-// click on second product
-String searchedProduct = ConfigReader.getProperty("search_product");
-homePage.searchBox.sendKeys(searchedProduct);
-WebElement product = homePage.productSearch;
-Assert.assertTrue(product.isDisplayed());
-// click to product 2
-product.click();
-JSUtils.clickElementByJS(allOverCommercePage.calculatorCompare);
+   allOverCommercePage.searchBox.click();
+   allOverCommercePage.searchBox.sendKeys("chess",Keys.ENTER);
+   allOverCommercePage.submitButton.click();
+   ReusableMethods.waitFor(2);
+   allOverCommercePage.chess.click();
+   ReusableMethods.waitFor(2);
+   JSUtils.clickElementByJS(allOverCommercePage.compareIcon);
+   ReusableMethods.waitFor(2);
+   allOverCommercePage.backToPage.click();
+   ReusableMethods.waitFor(2);
 
-// back to allCover page
-allOverCommercePage.allOverCommerceLogo.click();
-ReusableMethods.waitFor(2);
+   allOverCommercePage.searchBox.click();
+  allOverCommercePage.searchBox.sendKeys("ASUS",Keys.ENTER);
+  allOverCommercePage.submitButton.click();
+   ReusableMethods.waitFor(2);
+   allOverCommercePage.ASUS.click();
+   JSUtils.clickElementByJS(allOverCommercePage.compareIcon);
+   ReusableMethods.waitFor(3);
 
-// search and click on 3rd product
-homePage.searchBox.sendKeys(ConfigReader.getProperty("search_product2"));
-WebElement product3 = homePage.productSearch;
-Assert.assertTrue(product.isDisplayed());
-product3.click();
-JSUtils.clickElementByJS(allOverCommercePage.heybroCompare);
-
-// back to allCover page
-allOverCommercePage.allOverCommerceLogo.click();
-ReusableMethods.waitFor(2);
-
-// search and click on 4th product
-homePage.searchBox.sendKeys(ConfigReader.getProperty("search_product3"));
-WebElement product4 =homePage.productSearch;
-Assert.assertTrue(product4.isDisplayed());
-JSUtils.clickElementByJS(allOverCommercePage.usbCompare);
+   // user need clicks on START BUTTON
+   JSUtils.clickElementByJS(allOverCommercePage.startCompareButton);
+   ReusableMethods.waitFor(3);
 
 
+   // Remove 1 product
+    JSUtils.clickElementByJS(allOverCommercePage.removeASUS);
+    ReusableMethods.waitFor(3);
 
-
-// user removes the product
-ReusableMethods.waitFor(3);
-//comparePage.removeProduct1.click();
-JSUtils.clickElementByJS(comparePage.removeProduct1);
-ReusableMethods.waitFor(5);
-JSUtils.clickElementByJS(comparePage.getCleanAllButton);
-
+// verify
+    ReusableMethods.verifyElementNotDisplayed(comparePage.ASUS);
 
 
 
-// Verify all 4 product
 
 
-//Driver.closeDriver();
+
+
+
 }
 
 
