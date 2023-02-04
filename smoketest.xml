@@ -11,9 +11,9 @@
 	        <package name="allovercommerce.tests.us_11"/>
 	        <package name="allovercommerce.tests.us_04"/>
 	        <package name="allovercommerce.tests.us_20"/>
-	        <package name="allovercommerce.tests.us05"/>
-	        <package name="allovercommerce.tests.us10"/>
-	        <package name="allovercommerce.tests.us22"/>
+	        <package name="allovercommerce.tests.us_05"/>
+	        <package name="allovercommerce.tests.us_10"/>
+	        <package name="allovercommerce.tests.us_22"/>
 	        <package name="allovercommerce.tests.us_16"/>
         </packages>
     </test>

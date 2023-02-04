@@ -1,14 +1,10 @@
-package allovercommerce.tests.us05;
+package allovercommerce.tests.us_05;
 
 import allovercommerce.pages.HomePage;
 import allovercommerce.pages.MyAccountPage;
 import allovercommerce.utilities.ConfigReader;
 import allovercommerce.utilities.Driver;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptException;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import static allovercommerce.utilities.ReusableMethods.*;

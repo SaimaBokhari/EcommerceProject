@@ -1,4 +1,4 @@
-package allovercommerce.tests.US13;
+package allovercommerce.tests.us_13;
 
 import allovercommerce.pages.HomePage;
 import allovercommerce.pages.MyAccountPage;
