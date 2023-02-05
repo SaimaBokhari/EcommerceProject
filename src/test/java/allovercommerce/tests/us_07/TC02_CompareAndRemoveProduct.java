@@ -102,39 +102,7 @@ THEN   VERIFY 2 product has been removed
     assertEquals(expectedlUrl,actualUrl);
 
 
-
-
-
-
-
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }

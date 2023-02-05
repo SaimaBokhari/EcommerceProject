@@ -82,24 +82,10 @@ Driver.getDriver().get(ConfigReader.getProperty("ecommerce_url"));
    JSUtils.clickElementByJS(allOverCommercePage.compareIcon);
    ReusableMethods.waitFor(3);
 
-//
-//// verify
+
+// verify all products are added
   ReusableMethods.verifyElementDisplayed(allOverCommercePage.fourProducts);
 
-
-
-
-
-
-
-
 }
-
-
-
-
-
-
-
 
 }
