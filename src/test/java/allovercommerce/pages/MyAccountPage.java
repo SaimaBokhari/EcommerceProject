@@ -94,17 +94,23 @@ public class MyAccountPage {
     @FindBy(xpath = "//input[@class='select2-search__field']")
     public WebElement countryInputSection;
 
+
+    @FindBy(id = "billing_email")
+    public WebElement billingEmailConfirmation;
+
+    @FindBy(xpath = "//div[@class='woocommerce-notices-wrapper']")
+    public WebElement successMessage;
+
+
     @FindBy(xpath = "//input[@class='select2-search__field']")
     public WebElement countryInputSectionForBilling;
 
     @FindBy(xpath = "//input[@class='select2-search__field']")
     public WebElement stateInputSectionForBilling;
 
+
     @FindBy(linkText = "My Account")
     public WebElement myAccountPageExist;
 
-    // Vender shipping Address locators
 
-    @FindBy(xpath = "//div[@class='woocommerce-notices-wrapper']")
-    public WebElement successMessage;
 }
