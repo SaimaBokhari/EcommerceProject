@@ -108,9 +108,45 @@ public class MyAccountPage {
     @FindBy(xpath = "//input[@class='select2-search__field']")
     public WebElement stateInputSectionForBilling;
 
-
     @FindBy(linkText = "My Account")
     public WebElement myAccountPageExist;
 
+    @FindBy(id = "billing_first_name")
+    public WebElement firstName;
 
+    @FindBy(id = "billing_last_name")
+    public WebElement lastName;
+
+    @FindBy(xpath = "//select[@id='billing_country']")
+    public WebElement countryRegion;
+
+    @FindBy(xpath = "//input[@id='billing_address_1']")
+    public WebElement streetAddress;
+
+    @FindBy(xpath = "//input[@id='billing_city']")
+    public WebElement townCity;
+
+    @FindBy(xpath = "//select[@id='billing_state']")
+    public WebElement stateUS;
+
+    @FindBy(xpath = "//input[@id='billing_postcode']")
+    public WebElement zipCode;
+
+    @FindBy(xpath = "//input[@id='billing_phone']")
+    public WebElement phoneNumber;
+
+    @FindBy(xpath = "//input[@id='billing_email']")
+    public WebElement vendorEmail;
+
+    @FindBy(xpath = "//button[@name='save_address']")
+    public WebElement saveAddress;
+
+    @FindBy(xpath = "//a[normalize-space()='Edit Your Billing Address']")
+    public WebElement addBillingAddress;
+
+    @FindBy(xpath = "//*[text()='Addresses']")
+    public WebElement addressesLink;
+
+    @FindBy(xpath = "//td[normalize-space()='World Way 151']")
+    public WebElement savedAddressField;
 }

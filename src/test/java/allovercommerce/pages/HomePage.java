@@ -123,15 +123,53 @@ public class HomePage {
     @FindBy(id = "rememberme")
     public WebElement rememberMeCheckbox;
 
-
-
     @FindBy(linkText = "Sign In")
     public WebElement signIn;
 
     @FindBy(name = "login")
     public WebElement logIn;
 
+    @FindBy(xpath = "//a[@class='register inline-type']")
+    public WebElement registerLink;
 
+    @FindBy(xpath = "//a[@class='login inline-type']")
+    public WebElement loginLink;
+
+    @FindBy(id = "reg_username")
+    public WebElement usernameField;
+
+    @FindBy(id = "username")
+    public WebElement nameField;
+
+    @FindBy(id = "reg_email")
+    public WebElement emailField;
+
+    @FindBy (id = "reg_password")
+    public WebElement passwordField;
+
+    @FindBy(id = "password")
+    public WebElement passField;
+
+    @FindBy(id = "register-policy")
+    public WebElement privacyButton;
+
+    @FindBy(name = "register")
+    public WebElement registerButton2;
+
+    @FindBy(name = "login")
+    public WebElement loginButton;
+
+    @FindBy(xpath = "//*[text()='An account is already registered with that username. Please choose another.']")
+    public WebElement warningUsernameMessage;
+
+    @FindBy(xpath = "//*[text()='An account is already registered with your email address. ']")
+    public WebElement warningEmailMessage;
+
+    @FindBy(xpath ="//div[@class='wcfmmp_become_vendor_link']" )
+    public WebElement vendorLink;
+
+    @FindBy(linkText = "My Account")
+    public WebElement myAccountLink;
 
 
 
