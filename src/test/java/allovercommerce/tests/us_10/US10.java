@@ -1,4 +1,4 @@
-package allovercommerce.tests.us10;
+package allovercommerce.tests.us_10;
 
 import allovercommerce.pages.HomePage;
 import allovercommerce.pages.US_10_VendorRegisterPage;

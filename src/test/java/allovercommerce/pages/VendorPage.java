@@ -17,7 +17,23 @@ public class VendorPage {
     @FindBy(xpath = "(//input[@type='text'])[2]")
     public WebElement codeInput;
 
-    @FindBy(id = "passoword")
+
+    @FindBy(xpath = "(//*[.='Sign In'])[1]")
+    public WebElement signInOptions;
+
+    @FindBy (id = "username")
+    public WebElement usernameInput;
+
+    @FindBy(name = "login")
+    public WebElement signInButton;
+
+    @FindBy (name = "s")
+    public WebElement searchInput;
+
+    @FindBy(xpath = "//*[@data-original-product-id='14216']")
+    public WebElement addWishList;
+
+    @FindBy(id = "password")
     public WebElement passwordInput;
 
 
@@ -84,6 +100,26 @@ public class VendorPage {
 
     @FindBy(linkText = "Wishlist")
     public WebElement wishlistLink;
+
+
+
+
+
+
+
+
+
+
+
+    @FindBy(xpath = "//*[.='Store Manager']")
+    public WebElement storeManager;
+
+
+
+
+
+
+
 
 
 }
