@@ -6,7 +6,6 @@ import allovercommerce.pages.VendorPage;
 import allovercommerce.utilities.ConfigReader;
 import allovercommerce.utilities.Driver;
 import allovercommerce.utilities.ReusableMethods;
-import com.github.javafaker.Faker;
 import org.testng.annotations.Test;
 
 import static org.testng.AssertJUnit.assertTrue;

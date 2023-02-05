@@ -1,9 +1,8 @@
-package allovercommerce.tests.us22;
+package allovercommerce.tests.us_22;
 
 
 import allovercommerce.pages.US_22_LoginPage;
 import allovercommerce.pages.US_22_SelectingAndShop;
-import allovercommerce.pages.US_22_LoginPage;
 import allovercommerce.utilities.ConfigReader;
 import allovercommerce.utilities.Driver;
 import allovercommerce.utilities.ReusableMethods;
