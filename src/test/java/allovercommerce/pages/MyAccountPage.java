@@ -94,7 +94,7 @@ public class MyAccountPage {
     @FindBy(xpath = "//input[@class='select2-search__field']")
     public WebElement countryInputSection;
 
-<<<<<<< HEAD
+
     @FindBy(id = "billing_address_1")
     public WebElement billingStreetAddress;
 
@@ -118,8 +118,7 @@ public class MyAccountPage {
 
 
 
-=======
->>>>>>> main
+
     @FindBy(xpath = "//div[@class='woocommerce-notices-wrapper']")
     public WebElement successMessage;
 }
