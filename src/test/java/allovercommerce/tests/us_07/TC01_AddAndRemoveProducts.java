@@ -7,6 +7,7 @@ import allovercommerce.utilities.ConfigReader;
 import allovercommerce.utilities.Driver;
 import allovercommerce.utilities.JSUtils;
 import allovercommerce.utilities.ReusableMethods;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
@@ -20,110 +21,71 @@ public class TC01_AddAndRemoveProducts {
 Given
      https://allovercommerce.com/
 When
-    user click on  “ALLOVER COMMERCE” logo from My Account page
-And
-    click on 1st Product
-And
-    click on compare icon
-And
-     back to allcoverpage
-And
-     click on 2nd Product
-And
-    click on compare icon
-And
-     back to allcover
-And
-     click on 3rd Product
-And
-    click on compare icon
-And
-     back to allcover
-And
-    click on 4th  Product
-And
-    click on compare icon
-And
-     back to allcoverpage
-then
-    verify products are on Compare page
-
+       User click on Search box and search product
+AND    add submitButton and select 1st product
+AND    clickS on compare icon and adds first product
+AND    clickS on compare icon on product
+AND    User click on Search box again and search for 2nd product
+AND    user clicks on submitButton and select 2nd product
+AND    clickS on compare icon on 2nd product
+AND    User click on Search box again and search for 3rd product
+AND    user clicks on submitButton and select 3rd product
+AND    clickS on compare icon on 3rd product
+AND    User click on Search box again and search for fourth product
+AND    user clicks on submitButton and select  fourth product
+AND    clickS on compare icon on  fourth product
+THEN   user verifies all product is on compare box
  */
 AllOverCommercePage allOverCommercePage = new AllOverCommercePage();
-HomePage homePage=new HomePage();
+
 ComparePage comparePage = new ComparePage();
 @Test
 public void testCase1_Us7(){
-//  https://allovercommerce.com/
 Driver.getDriver().get(ConfigReader.getProperty("ecommerce_url"));
 
-// user click on  “ALLOVER COMMERCE” icon
-allOverCommercePage.allOverCommerceLogo.click();
+// user adds 4 product to compare
+   allOverCommercePage.searchBox.click();
+   allOverCommercePage.searchBox.sendKeys("Automatic Crusher", Keys.ENTER);
+   allOverCommercePage.submitButton.click();
+   ReusableMethods.waitFor(2);
+   allOverCommercePage.automaticCrusher.click();
+   allOverCommercePage.compareIcon.click();
+   ReusableMethods.waitFor(2);
+   allOverCommercePage.backToPage.click();
+   ReusableMethods.waitFor(2);
 
-// click on 1st product compare button
-JSUtils.clickElementByJS(allOverCommercePage.producttoCompare);
-ReusableMethods.waitFor(2);
-// click on compare icon
-JSUtils.clickElementByJS(allOverCommercePage.Compareicon);
+   allOverCommercePage.searchBox.sendKeys("Electric Rice-Cooker", Keys.ENTER);
+   allOverCommercePage.submitButton.click();
+   ReusableMethods.waitFor(2);
+   allOverCommercePage.electricRiceCooker.click();
+   allOverCommercePage.compareIcon.click();
+   ReusableMethods.waitFor(2);
+   allOverCommercePage.backToPage.click();
+   ReusableMethods.waitFor(2);
 
-// back to allCover page
-allOverCommercePage.allOverCommerceLogo.click();
-ReusableMethods.waitFor(2);
+   allOverCommercePage.searchBox.click();
+   allOverCommercePage.searchBox.sendKeys("chess",Keys.ENTER);
+   allOverCommercePage.submitButton.click();
+   ReusableMethods.waitFor(2);
+   allOverCommercePage.chess.click();
+   ReusableMethods.waitFor(2);
+   JSUtils.clickElementByJS(allOverCommercePage.compareIcon);
+   ReusableMethods.waitFor(2);
+   allOverCommercePage.backToPage.click();
+   ReusableMethods.waitFor(2);
 
-// click on second product
-String searchedProduct = ConfigReader.getProperty("search_product");
-homePage.searchBox.sendKeys(searchedProduct);
-WebElement product = homePage.productSearch;
-Assert.assertTrue(product.isDisplayed());
-// click to product 2
-product.click();
-JSUtils.clickElementByJS(allOverCommercePage.calculatorCompare);
-
-// back to allCover page
-allOverCommercePage.allOverCommerceLogo.click();
-ReusableMethods.waitFor(2);
-
-// search and click on 3rd product
-homePage.searchBox.sendKeys(ConfigReader.getProperty("search_product2"));
-WebElement product3 = homePage.productSearch;
-Assert.assertTrue(product.isDisplayed());
-product3.click();
-JSUtils.clickElementByJS(allOverCommercePage.heybroCompare);
-
-// back to allCover page
-allOverCommercePage.allOverCommerceLogo.click();
-ReusableMethods.waitFor(2);
-
-// search and click on 4th product
-homePage.searchBox.sendKeys(ConfigReader.getProperty("search_product3"));
-WebElement product4 =homePage.productSearch;
-Assert.assertTrue(product4.isDisplayed());
-JSUtils.clickElementByJS(allOverCommercePage.usbCompare);
+   allOverCommercePage.searchBox.click();
+  allOverCommercePage.searchBox.sendKeys("ASUS",Keys.ENTER);
+  allOverCommercePage.submitButton.click();
+   ReusableMethods.waitFor(2);
+   allOverCommercePage.ASUS.click();
+   JSUtils.clickElementByJS(allOverCommercePage.compareIcon);
+   ReusableMethods.waitFor(3);
 
 
+// verify all products are added
+  ReusableMethods.verifyElementDisplayed(allOverCommercePage.fourProducts);
 
-
-// user removes the product
-ReusableMethods.waitFor(3);
-//comparePage.removeProduct1.click();
-JSUtils.clickElementByJS(comparePage.removeProduct1);
-ReusableMethods.waitFor(5);
-JSUtils.clickElementByJS(comparePage.getCleanAllButton);
-
-
-
-
-// Verify all 4 product
-
-
-//Driver.closeDriver();
 }
-
-
-
-
-
-
-
 
 }
