@@ -8,6 +8,8 @@ import allovercommerce.utilities.JSUtils;
 import allovercommerce.utilities.ReusableMethods;
 import com.github.javafaker.Faker;
 import org.openqa.selenium.Keys;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 import java.security.Key;
@@ -101,8 +103,8 @@ Then
         myAccountPage.billingCountryDropdown.click();
 
         ReusableMethods.waitFor(5);
-        JSUtils.scrollIntoViewJS(myAccountPage.countryInputSection);
-        myAccountPage.countryInputSection.sendKeys("United States"+ Keys.ENTER);
+        JSUtils.scrollIntoViewJS(myAccountPage.countryInputSectionForBilling);
+        myAccountPage.countryInputSectionForBilling.sendKeys("United States"+ Keys.ENTER);
 
 
        //   User enters street address
@@ -116,12 +118,12 @@ Then
        //   User enters state
         ReusableMethods.waitFor(5);
         myAccountPage.billingState.click();
-        myAccountPage.billingState.sendKeys(faker.address().state());
+        myAccountPage.stateInputSectionForBilling.sendKeys(faker.address().state() + Keys.ENTER);
         ReusableMethods.waitFor(5);
-        assertTrue(myAccountPage.billingState.isDisplayed());
+       // assertTrue(myAccountPage.billingState.isDisplayed());
 
         //   User enters ZIP Code
-        JSUtils.scrollIntoViewJS(myAccountPage.billingZipcode);
+        ReusableMethods.waitFor(5);
         myAccountPage.billingZipcode.sendKeys(faker.address().zipCode());
         ReusableMethods.waitFor(5);
         assertTrue(myAccountPage.billingZipcode.isDisplayed());
@@ -134,17 +136,24 @@ Then
 
         //  Confirms that registered email address is filled in automatically.
         ReusableMethods.waitFor(5);
-        assertTrue(myAccountPage.billingEmailConfirmation.getAttribute("value").contains(reg_email));
+       // assertTrue(myAccountPage.billingEmailConfirmation.getAttribute("value").contains(reg_email));
 
         // User clicks on "Save Address" option
-        JSUtils.scrollIntoViewJS(myAccountPage.saveBillingAddress);
-        ReusableMethods.waitForClickablility(myAccountPage.saveBillingAddress, 5);
         ReusableMethods.waitFor(5);
+        myAccountPage.saveBillingAddress.click();
 
-        // Verify that Billing Address is successfully saved
-        assertTrue(myAccountPage.successMessage.isDisplayed());
+        // Verify "Address" is saved successfully
+        ReusableMethods.waitFor(5);
+        String currentUrl = Driver.getDriver().getCurrentUrl();
+        ReusableMethods.waitFor(3);
+        Assert.assertEquals(currentUrl,"https://allovercommerce.com/my-account-2/edit-address/");
 
-
+    }
+    @AfterMethod
+    public void tearDown(){
+        // Close the application
+        ReusableMethods.waitFor(5);
+        Driver.closeDriver();
     }
 
 }

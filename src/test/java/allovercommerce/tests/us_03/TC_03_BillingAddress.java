@@ -48,6 +48,7 @@ And
     HomePage homePage = new HomePage();
     MyAccountPage myAccountPage = new MyAccountPage();
     Faker faker = new Faker();
+
     String reg_username = faker.name().username();
     String reg_email = faker.internet().emailAddress();
     String reg_password = faker.internet().password(1,8);
