@@ -98,8 +98,14 @@ public class MyAccountPage {
     @FindBy(id = "billing_email")
     public WebElement billingEmailConfirmation;
 
+
+
+
+
     @FindBy(xpath = "//div[@class='woocommerce-notices-wrapper']")
     public WebElement successMessage;
+
+
 
 
     @FindBy(xpath = "//input[@class='select2-search__field']")
@@ -109,8 +115,17 @@ public class MyAccountPage {
     public WebElement stateInputSectionForBilling;
 
 
+
     @FindBy(linkText = "My Account")
     public WebElement myAccountPageExist;
 
 
+
+
 }
+
+
+
+
+
+

@@ -6,7 +6,9 @@ import allovercommerce.utilities.ConfigReader;
 import allovercommerce.utilities.Driver;
 import allovercommerce.utilities.JSUtils;
 import allovercommerce.utilities.ReusableMethods;
+import com.github.javafaker.Faker;
 import org.openqa.selenium.Keys;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class AddShippingAddress {
@@ -43,6 +45,8 @@ public class AddShippingAddress {
     HomePage homePage = new HomePage();
     MyAccountPage myAccountPage = new MyAccountPage();
     ShippingAddressPage shippingAddressPage = new ShippingAddressPage();
+
+    Faker faker;
     @Test
     public void testCase02_US13(){
     // user log in as user
@@ -73,42 +77,38 @@ public class AddShippingAddress {
 //    JSUtils.clickElementByJS(shippingAddressPage.shippingCountryDropdown);
 //    shippingAddressPage.countryInputSection.sendKeys("Turkey"+Keys.ENTER);
 //    ReusableMethods.waitFor(5);
+        JSUtils.clickElementByJS(myAccountPage.shippingCountry);
 
-       JSUtils.clickElementByJS(shippingAddressPage.shippingCountryDropdown);
-     shippingAddressPage.shippingCountryDropdown.sendKeys("Turkey" + Keys.ENTER);
-     ReusableMethods.waitFor(2);
+         myAccountPage.inputSection.sendKeys("turkey" + Keys.ENTER);
+        ReusableMethods.waitFor(2);
 
-      shippingAddressPage.shippingProvince.click();
-       shippingAddressPage.provinceInput.sendKeys("Ankara" + Keys.ENTER);
-      ReusableMethods.waitFor(6);
+        // Registered Users types street address
+        myAccountPage.shippingStreetAddress.sendKeys(faker.address().streetAddress());
+        ReusableMethods.waitFor(1);
 
+        // Registered Users types ZIP Code
+        myAccountPage.shippingPostCode.sendKeys(faker.address().zipCode());
+        ReusableMethods.waitFor(1);
 
+        // Registered Users types town/city
+        myAccountPage.shippingCity.sendKeys(faker.address().cityName());
+        ReusableMethods.waitFor(1);
 
-//  user add street address
-    shippingAddressPage.streetShippingAddress.sendKeys("palace road");
+        // Registered Users types state
+        myAccountPage.shippingProvince.click();
+        myAccountPage.inputSection2.sendKeys("Ankara" + Keys.ENTER);
+        ReusableMethods.waitFor(6);
 
-//  user add zipcode
-    ReusableMethods.waitFor(3);
-    shippingAddressPage.shippingPostCode.sendKeys("KT14PN");
+        // Click on "Save Address" button
+        myAccountPage.saveAddressButton.click();
+        ReusableMethods.waitFor(6);
 
-//  user add city
-    ReusableMethods.waitFor(2);
-    shippingAddressPage.shippingCity.sendKeys("Anta");
-
-//  user add province from drop down
-    ReusableMethods.waitFor(2);
-    JSUtils.clickElementByJS(shippingAddressPage.shippingProvince);
-    shippingAddressPage.provinceInput.sendKeys("Adana"+Keys.ENTER);
-
-//   user clicks on SAVE BUTTON
-    shippingAddressPage.saveAddressButton.click();
-
-
+        // Verify "Address changed successfully
+        String currentUrl = Driver.getDriver().getCurrentUrl();
+        Assert.assertEquals(currentUrl,"https://allovercommerce.com/my-account-2/edit-address/");
 
 
 
-
-//  // Registered Users types country/region
 
 
 
