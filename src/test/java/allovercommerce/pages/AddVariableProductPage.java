@@ -37,47 +37,56 @@ public class AddVariableProductPage {
     @FindBy(id = "featured_img_display")
     public WebElement featuredImage;
 
-    @FindBy(id = "__wp-uploader-id-1")
-    public WebElement select1FilesButton;
+    @FindBy(id = "menu-item-browse")
+    public WebElement mediaLibrary;
+
+    @FindBy(xpath = "(//img[@src='https://allovercommerce.com/wp-content/uploads/2023/01/Bart-Simpson-1-300x187.jpg'])[1]")
+    public WebElement image;
 
     @FindBy(xpath = "(//*[.='Select'])[3]")
-    public WebElement selectButton;
+    public WebElement select1;
 
     //gallery img
 
     @FindBy(id = "(gallery_img_gimage_0_display")
     public WebElement galleryImage;
 
-    @FindBy(id = "(menu-item-upload")
-    public WebElement uploadFilesButton;
-
-
-    @FindBy(id = "(__wp-uploader-id-4")
-    public WebElement select2FilesButton;
-
+    @FindBy(xpath = "(//img[@src='https://allovercommerce.com/wp-content/uploads/2023/01/Bart-Simpson-1-300x187.jpg'])[2]")
+    public WebElement image2;
 
     @FindBy(xpath = "(//*[.='Add to Gallery'])[8]")
     public WebElement addGalleryButton;
 
 
 //choose category
-    @FindBy(xpath = "(//input[@type='checkbox'])[99]")
-    public WebElement shoeCheckbox;
-
-    @FindBy(id = "wcfm_products_simple_submit_button")
-    public WebElement productSubmitButton;
-
-
-    @FindBy(id = "wcfm_products_manage_form_attribute_head")
-    public WebElement attributeButton;
+    @FindBy(xpath = "(//span[.='Best Seller']")
+    public WebElement categoryCheckbox;
 
     @FindBy(id = "attributes_is_active_1")
-    public WebElement colorButtonCheckbox;
+    public WebElement colorCheckbox;
 
     @FindBy(xpath = "(//*[.='Add New'])[3]")
     public WebElement addNewcolorButton;
 
-    //driver switch to alert send keys accept
+    @FindBy(id = "attributes_is_active_2")
+    public WebElement sizeCheckbox;
+
+    @FindBy(xpath = "(//*[.='Add New'])[4]")
+    public WebElement addNewSizeButton;
+
+    @FindBy(id = "wcfm_products_manage_form_attribute_head")
+    public WebElement attributeButton;
+
+    @FindBy(id = "wcfm_products_manage_form_attribute_head")
+    public WebElement attributeName;
+
+    @FindBy(id = "wcfm_products_simple_submit_button")
+    public WebElement productSubmitButton;
+
+    @FindBy(xpath = "v//select[@name='default_attributes[attribute_pa_size]']")
+    public WebElement anySizeDropdown;
+
+
 
 
 

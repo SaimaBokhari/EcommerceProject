@@ -35,11 +35,11 @@ public class VendorShoppingTest {
 
 
         //enter email as username in username input
-        loginPage.usernameInput.sendKeys(ConfigReader.getProperty("username"));
+        loginPage.usernameInput.sendKeys(ConfigReader.getProperty("username_"));
 
 
         //enter password in password input
-        loginPage.passwordInput.sendKeys(ConfigReader.getProperty("password"));
+        loginPage.passwordInput.sendKeys(ConfigReader.getProperty("password_"));
 
 
         //click on Sign In submit button
