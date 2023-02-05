@@ -50,5 +50,4 @@ public class ComparePage {
     public WebElement ASUS;
 
 
-
 }

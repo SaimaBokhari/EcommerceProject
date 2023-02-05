@@ -21,47 +21,30 @@ public class TC01_AddAndRemoveProducts {
 Given
      https://allovercommerce.com/
 When
-    user click on  “ALLOVER COMMERCE” logo from My Account page
-And
-    User search for first product
-And
-    click on compare icon
-And
-     back to allcoverpage
-And
-     click on 2nd Product
-And
-    click on compare icon
-And
-     back to allcover
-And
-     click on 3rd Product
-And
-    click on compare icon
-And
-     back to allcover
-And
-    click on 4th  Product
-And
-    click on compare icon
-And
-     back to allcoverpage
-then
-    verify products are on Compare page
-
+       User click on Search box and search product
+AND    add submitButton and select 1st product
+AND    clickS on compare icon and adds first product
+AND    clickS on compare icon on product
+AND    User click on Search box again and search for 2nd product
+AND    user clicks on submitButton and select 2nd product
+AND    clickS on compare icon on 2nd product
+AND    User click on Search box again and search for 3rd product
+AND    user clicks on submitButton and select 3rd product
+AND    clickS on compare icon on 3rd product
+AND    User click on Search box again and search for fourth product
+AND    user clicks on submitButton and select  fourth product
+AND    clickS on compare icon on  fourth product
+THEN   user verifies all product is on compare box
  */
 AllOverCommercePage allOverCommercePage = new AllOverCommercePage();
-HomePage homePage=new HomePage();
+
 ComparePage comparePage = new ComparePage();
 @Test
 public void testCase1_Us7(){
-
-
 Driver.getDriver().get(ConfigReader.getProperty("ecommerce_url"));
 
 // user adds 4 product to compare
-
-    allOverCommercePage.searchBox.click();
+   allOverCommercePage.searchBox.click();
    allOverCommercePage.searchBox.sendKeys("Automatic Crusher", Keys.ENTER);
    allOverCommercePage.submitButton.click();
    ReusableMethods.waitFor(2);
@@ -99,17 +82,9 @@ Driver.getDriver().get(ConfigReader.getProperty("ecommerce_url"));
    JSUtils.clickElementByJS(allOverCommercePage.compareIcon);
    ReusableMethods.waitFor(3);
 
-   // user need clicks on START BUTTON
-   JSUtils.clickElementByJS(allOverCommercePage.startCompareButton);
-   ReusableMethods.waitFor(3);
-
-
-   // Remove 1 product
-    JSUtils.clickElementByJS(allOverCommercePage.removeASUS);
-    ReusableMethods.waitFor(3);
-
-// verify
-    ReusableMethods.verifyElementNotDisplayed(comparePage.ASUS);
+//
+//// verify
+  ReusableMethods.verifyElementDisplayed(allOverCommercePage.fourProducts);
 
 
 

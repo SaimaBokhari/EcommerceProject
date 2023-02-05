@@ -10,8 +10,6 @@ public class AllOverCommercePage {
     public AllOverCommercePage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
-    @FindBy(xpath = "//a[@class='logo']")
-    public WebElement allOverCommerceLogo;
 
 
     @FindBy(xpath = "//i[@class='w-icon-times-solid']")
@@ -60,5 +58,10 @@ public class AllOverCommercePage {
     @FindBy(xpath = "//a[@data-product_id='14216']")
     public WebElement removeASUS;
 
+  @FindBy(xpath = "//a[@data-product_id='19895']")
+  public WebElement removeChess;
+
+  @FindBy(xpath = "//mark[.='4']")
+  public WebElement fourProducts;
 
 }

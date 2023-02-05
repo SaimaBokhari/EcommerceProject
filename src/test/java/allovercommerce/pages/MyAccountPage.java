@@ -95,7 +95,7 @@ public class MyAccountPage {
     @FindBy(xpath = "//input[@class='select2-search__field']")
     public WebElement countryInputSection;
 
-
+//
 //    @FindBy(id = "billing_address_1")
 //    public WebElement billingStreetAddress;
 //
@@ -126,7 +126,7 @@ public class MyAccountPage {
     @FindBy(linkText = "My Account")
     public WebElement myAccountPageExist;
 
-    // Vender shipping Address locators
+
 
 
 }
